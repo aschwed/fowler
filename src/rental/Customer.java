@@ -1,18 +1,18 @@
 package rental;
 
-import java.util.Enumeration;
-import java.util.Vector;
+import java.util.ArrayList;
+import java.util.Collection;
 
 class Customer {
 	private String name;
-	private Vector<Rental> rentals = new Vector<Rental>();
+	private Collection<Rental> rentals = new ArrayList<Rental>();
 
 	public Customer(String newname) {
 		name = newname;
 	};
 
 	public void addRental(Rental arg) {
-		rentals.addElement(arg);
+		rentals.add(arg);
 	};
 
 	public String getName() {
@@ -22,13 +22,12 @@ class Customer {
 	public String statement() {
 		double totalAmount = 0;
 		int frequentRenterPoints = 0;
-		Enumeration<Rental> enum_rentals = rentals.elements();
+		
 		String result = "Rental Record for " + this.getName() + "\n";
 		result += "\t" + "Title" + "\t" + "\t" + "Days" + "\t" + "Amount" + "\n";
 
-		while (enum_rentals.hasMoreElements()) {
+		for(Rental each: rentals) {
 			double thisAmount = 0;
-			Rental each = enum_rentals.nextElement();
 			// determine amounts for each line
 			thisAmount = amountFor(each);
 			// add frequent renter points
