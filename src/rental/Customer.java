@@ -7,12 +7,12 @@ class Customer {
 	private String name;
 	private Collection<Rental> rentals = new ArrayList<Rental>();
 
-	public Customer(String newname) {
-		name = newname;
+	public Customer(String name) {
+		this.name = name;
 	};
 
-	public void addRental(Rental arg) {
-		rentals.add(arg);
+	public void addRental(Rental rental) {
+		rentals.add(rental);
 	};
 
 	public String getName() {
