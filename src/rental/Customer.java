@@ -1,3 +1,4 @@
+package rental;
 
 import java.lang.*;
 import java.util.*;
