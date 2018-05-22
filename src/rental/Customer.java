@@ -3,7 +3,7 @@ package rental;
 import java.util.ArrayList;
 import java.util.Collection;
 
-class Customer {
+public class Customer {
 	private String name;
 	private Collection<Rental> rentals = new ArrayList<Rental>();
 
